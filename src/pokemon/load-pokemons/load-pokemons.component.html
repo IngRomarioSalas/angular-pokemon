@@ -20,7 +20,7 @@
 <div class="pokemon-result">
   <div
     class="tarjet"
-    *ngFor="let pokemon of pokemons.reverse() | paginate: { itemsPerPage: 2, currentPage: page, totalItems: 1052}"
+    *ngFor="let pokemon of pokemons.reverse() | paginate: { itemsPerPage: 2, currentPage: page, totalItems: 804}"
   >
     <div class="card">
       <div class="row">
@@ -40,7 +40,10 @@
                 {{pokemon.types[1]?.type.name}}</strong
               >
             </h6>
-            <ng-template #elseBl3>{{pokemon.moves[2]?.move.name}}</ng-template>
+            <ng-template #elseBl3
+              ><strong>Tipo: </strong>
+              <strong>{{pokemon.types[0].type.name}}</strong></ng-template
+            >
             <h6><strong>Movimientos:</strong></h6>
             <p *ngIf="pokemon.moves[1]?.move.name; else elseBl">
               {{pokemon.moves[0]?.move.name}}, {{pokemon.moves[1]?.move.name}}

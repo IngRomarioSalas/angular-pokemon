@@ -59,10 +59,10 @@ footer {
   padding-bottom: 30px;
 }
 .circulo {
-  width: 50px;
+  width: 3%;
   height: 50px;
   margin-left: 88%;
-  margin-top: -2%;
+  margin-top: -1%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -71,10 +71,16 @@ footer {
 
 footer h2 {
   font-weight: lighter;
-  padding-top: 10px;
+  padding-top: 5px;
   padding-bottom: 30px;
   color: $base;
 }
+
+footer a {
+  text-decoration: none;
+  color: $base;
+}
+
 p {
   color: $base;
 }
