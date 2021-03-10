@@ -7,40 +7,57 @@
     placeholder="Bullbasaur, charizard ..."
   />
 
-  <input type="button" class="boton" id="BSearch" value="Buscar.." (click)="filtro()"/>
+  <input
+    type="button"
+    class="boton"
+    id="BSearch"
+    value="Buscar.."
+    (click)="filtro()"
+  />
 </div>
 <h2>Mis Resultados</h2>
 
 <div class="pokemon-result">
-  <div class="tarjet"
-    *ngFor="let pokemon of pokemons.reverse() | paginate: { itemsPerPage: 2, currentPage: page, totalItems: 100}">
+  <div
+    class="tarjet"
+    *ngFor="let pokemon of pokemons.reverse() | paginate: { itemsPerPage: 2, currentPage: page, totalItems: 1052}"
+  >
     <div class="card">
       <div class="row">
         <div class="col-sm-12 col-md-8 tarjeta">
-          <img [src]="pokemon.sprites.front_default">
-          <img [src]="pokemon.sprites.back_default">
+          <img [src]="pokemon.sprites.front_default" />
+          <img [src]="pokemon.sprites.back_default" />
         </div>
         <div class="col-sm-12 col-md-4">
           <div class="card-body {{pokemon.types[0].type.name}}">
-            <h5 class="card-title {{pokemon.types[1]?.type.name}}"><strong>{{pokemon.name}}</strong></h5>
-            <h6><strong>Tipo:</strong>
-              {{pokemon.types[0].type.name}}
-              {{pokemon.types[1]?.type.name}}
+            <h5 class="card-title {{pokemon.types[1]?.type.name}}">
+              <strong>{{pokemon.name}}</strong>
+            </h5>
+            <h6 *ngIf="pokemon.types[1]?.type.name; else elseBl3">
+              <strong>Tipo: </strong>
+              <strong
+                >{{pokemon.types[0].type.name}},
+                {{pokemon.types[1]?.type.name}}</strong
+              >
             </h6>
+            <ng-template #elseBl3>{{pokemon.moves[2]?.move.name}}</ng-template>
             <h6><strong>Movimientos:</strong></h6>
-            <p *ngIf="pokemon.moves[1]?.move.name; else elseBl">{{pokemon.moves[0]?.move.name}},
-              {{pokemon.moves[1]?.move.name}}</p>
+            <p *ngIf="pokemon.moves[1]?.move.name; else elseBl">
+              {{pokemon.moves[0]?.move.name}}, {{pokemon.moves[1]?.move.name}}
+            </p>
             <ng-template #elseBl>{{pokemon.moves[0].move.name}}</ng-template>
 
             <p *ngIf="pokemon.moves[3]?.move.name; else elseBl2">
-              {{pokemon.moves[2]?.move.name}}, {{pokemon.moves[3]?.move.name}}</p>
+              {{pokemon.moves[2]?.move.name}}, {{pokemon.moves[3]?.move.name}}
+            </p>
             <ng-template #elseBl2>{{pokemon.moves[2]?.move.name}}</ng-template>
-
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<br>
-<pagination-controls (pageChange)="page = $event; pokemons = []; getPokemon()"></pagination-controls>
+<br />
+<pagination-controls
+  (pageChange)="page = $event; pokemons = []; getPokemon()"
+></pagination-controls>
