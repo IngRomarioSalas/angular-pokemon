@@ -81,7 +81,7 @@ export class LoadPokemonsComponent implements OnInit {
           console.log("error");
           
           swal.fire({
-            imageAlt: "https://stackblitz.com/files/angular-hwzfqf/github/IngRomarioSalas/angular-pokemon/master/src/quien.png",
+            imageUrl: "https://stackblitz.com/files/angular-hwzfqf/github/IngRomarioSalas/angular-pokemon/master/src/quien.png",
             title: "ERROR",
             text: "NO EXISTE EL POKEMON"
           })
