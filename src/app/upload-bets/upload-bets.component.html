@@ -1,0 +1,91 @@
+<div class="container">
+	El archivo debe tener extension csv, separado por ";".
+	<div class="custom-file">
+		<input type="file" (change)="handleFileSelect($event)" class="custom-file-input" id="customFile">
+		<label class="custom-file-label" for="customFile">Choose file</label>
+	</div>
+
+</div>
+<div *ngIf="option != null && option.length > 0">
+
+	<form>
+		<div class="form-group row">
+			<label for="select-id" class="col-sm-2 col-form-label">Id</label>
+			<div class="col-sm-10">
+				<select name="select-id" [(ngModel)]="campoIdSeleccionado">
+        <option [value]="item" *ngFor="let item of option">{{item}}</option>
+      </select>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="select-nombre" class="col-sm-2 col-form-label">Nombre</label>
+			<div class="col-sm-10">
+				<select name="select-nombre" [(ngModel)]="campoNombreSeleccionado">
+        <option [value]="item" *ngFor="let item of option">{{item}}</option>
+      </select>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="select-telefono" class="col-sm-2 col-form-label">Telefono</label>
+			<div class="col-sm-10">
+				<select name="select-telefono" [(ngModel)]="campoTelefonoSeleccionado">
+        <option value=""></option>
+        <option [value]="item" *ngFor="let item of option">{{item}}</option>
+      </select>
+			</div>
+		</div>
+
+    <div class="form-group row">
+			<label for="number-cartones" class="col-sm-2 col-form-label">Cartones por id</label>
+			<div class="col-sm-10">
+        <input 
+        [(ngModel)]="cantidadxUsuario"
+        type="number" class="form-control" id="number-cartones"
+        name="number-cartones" placeholder="Cantidad de cartones por id" >
+			</div>
+		</div>
+
+		<div>
+			<dl class="row">
+				<dt class="col-sm-3">Nombre del archivo:</dt>
+				<dd class="col-sm-9">{{fileName}}</dd>
+
+				<dt class="col-sm-3">Cantidad Filas:</dt>
+				<dd class="col-sm-9">{{cantidadFilas}}</dd>
+
+				<dt class="col-sm-3">Campo Id:</dt>
+				<dd class="col-sm-9">{{campoIdSeleccionado}}</dd>
+
+				<dt class="col-sm-3">Campo Nombre:</dt>
+				<dd class="col-sm-9">{{campoNombreSeleccionado}}</dd>
+
+				<dt class="col-sm-3">Campo telefono:</dt>
+				<dd class="col-sm-9">{{campoTelefonoSeleccionado}}</dd>
+
+				<dt class="col-sm-3">Cantidad Cartones x Usuario:</dt>
+				<dd class="col-sm-9">{{cantidadxUsuario}}</dd>
+
+			</dl>
+
+		</div>
+
+		<button type="submit" class="btn btn-success" [disabled]="!campoIdSeleccionado" (click)="upload()">Agregar apuestas</button>
+	</form>
+
+<div *ngIf="progress != 0" class="progress">
+  <div
+    class="progress-bar progress-bar-info progress-bar-striped"
+    role="progressbar"
+    attr.aria-valuenow="{{ progress }}"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    [ngStyle]="{ width: progress + '%' }"
+  >
+    {{ progress }}%
+  </div>
+</div>
+
+
+</div>

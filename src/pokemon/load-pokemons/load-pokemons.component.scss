@@ -1,0 +1,176 @@
+@import "./../colors.scss";
+
+.card {
+  margin: 20px;
+  text-align: center;
+  background: $fondoimage;
+}
+.card-body {
+  text-align: left;
+  padding: 5%;
+  border: 2px solid $fondoimage;
+  background: $blanco;
+}
+
+.card-body p {
+  margin-left: 10%;
+}
+
+h6 {
+  margin: 3%;
+}
+
+.card-title {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  border: 2px solid $blanco;
+}
+img {
+  margin-top: 45px;
+  margin-: 45px;
+}
+
+@media (min-width: 700px) and (max-width: 760px) {
+  .tarjeta {
+    width: 97%;
+    border-radius: 5px;
+    margin-right: 1px;
+  }
+}
+@media (min-width: 480px) and (max-width: 700px) {
+  .tarjeta {
+    width: 96%;
+    border-radius: 5px;
+    margin-right: 1px;
+  }
+}
+@media (max-width: 480px) {
+  .tarjeta {
+    width: 94.4%;
+    border-radius: 5px;
+    margin-right: 1px;
+  }
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  color: $base;
+}
+
+#busqueda {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 5%;
+  margin-right: 15%;
+  margin-top: 30px;
+}
+
+.texto {
+  border: none;
+  color: $base;
+  font-size: 20px;
+  padding-left: 5%;
+  background: $blanco;
+  border-bottom: 2px solid $base;
+  margin-right: 5%;
+  width: 75%;
+}
+.boton {
+  text-decoration: none;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  font-size: 18px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 5%;
+  padding-left: 5%;
+  color: $blanco;
+  background-color: $base;
+  border: 2px solid $base;
+}
+
+.pokemon-result {
+  display: grid;
+  grid-gap: 16px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(23%, 100%));
+}
+.tarjeta {
+  background: $fondoimage;
+}
+.pokemon-result .tarjet {
+  margin-left: 10px;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+pagination-controls {
+  text-align: center;
+}
+
+.Normal {
+  border-color: $normal;
+}
+
+.Lucha {
+  border-color: $lucha;
+}
+.Volador {
+  border-color: $volador;
+}
+.Veneno {
+  border-color: $veneno;
+}
+.Tierra {
+  border-color: $tierra;
+}
+.Roca {
+  border-color: $roca;
+}
+.Bicho {
+  border-color: $bicho;
+}
+.Fantasma {
+  border-color: $fantasma;
+}
+.Acero {
+  border-color: $acero;
+}
+.Fuego {
+  border-color: $fuego;
+}
+.Agua {
+  border-color: $agua;
+}
+.Planta {
+  border-color: $planta;
+}
+.Eléctrico {
+  border-color: $electrico;
+}
+.Psíquico {
+  border-color: $psiquico;
+}
+.Hielo {
+  border-color: $hielo;
+}
+.Dragón {
+  border-color: $dragon;
+}
+.Siniestro {
+  border-color: $siniestro;
+}
+.Hada {
+  border-color: $hada;
+}
+.Ombra {
+  border-color: $sombra;
+}
