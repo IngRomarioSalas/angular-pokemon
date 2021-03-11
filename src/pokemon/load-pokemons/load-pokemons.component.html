@@ -18,10 +18,8 @@
 <h2>Mis Resultados</h2>
 
 <div class="pokemon-result">
-  <div
-    class="tarjet"
-    *ngFor="let pokemon of pokemons.reverse() | paginate: { itemsPerPage: 2, currentPage: page, totalItems: 804}"
-  >
+  <div class="tarjet"
+    *ngFor="let pokemon of pokemons.reverse() | paginate: { itemsPerPage: 2, currentPage: page, totalItems: 804}">
     <div class="card">
       <div class="row">
         <div class="col-sm-12 col-md-8 tarjeta">
@@ -37,13 +35,11 @@
               <strong>Tipo: </strong>
               <strong
                 >{{pokemon.types[0].type.name}},
-                {{pokemon.types[1]?.type.name}}</strong
-              >
+                {{pokemon.types[1]?.type.name}}</strong>
             </h6>
-            <ng-template #elseBl3
-              ><strong>Tipo: </strong>
-              <strong>{{pokemon.types[0].type.name}}</strong></ng-template
-            >
+            <ng-template #elseBl3><strong>Tipo: </strong>
+              <strong>{{pokemon.types[0].type.name}}</strong>
+            </ng-template>
             <h6><strong>Movimientos:</strong></h6>
             <p *ngIf="pokemon.moves[1]?.move.name; else elseBl">
               {{pokemon.moves[0]?.move.name}}, {{pokemon.moves[1]?.move.name}}
@@ -61,6 +57,5 @@
   </div>
 </div>
 <br />
-<pagination-controls
-  (pageChange)="page = $event; pokemons = []; getPokemon()"
-></pagination-controls>
+<pagination-controls *ngIf="show == 0" (pageChange)="page = $event; pokemons = []; getPokemon()">
+</pagination-controls>

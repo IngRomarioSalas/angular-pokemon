@@ -9,6 +9,7 @@ import swal from'sweetalert2';
 })
 export class LoadPokemonsComponent implements OnInit {
   search = "";
+  show = 0;
   pokemons: any[] = [];
   page = 0;
   pa=0;
@@ -22,6 +23,7 @@ export class LoadPokemonsComponent implements OnInit {
     if (this.search === "") {
       this.pokemons = [];
       this.getPokemon();
+      this.search = "";
     } else {
       this.PokemonService.getDataForName(this.search.toLowerCase()).subscribe(
         (uresponse: any) => {
@@ -87,11 +89,14 @@ export class LoadPokemonsComponent implements OnInit {
           })
         }
       );
+      this.search = "";
+      this.show = 1;
     }
-    this.search = "";
+    
+    
   }
   getPokemon() {
-    
+    this.show = 0;
     this.PokemonService.getPokemon(2, this.page*2 +1).subscribe(
       (response: any) => {
         this.totalpokemons = response.count;
